@@ -1,0 +1,49 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Lista {% endblock %}
+{% block section_title %}Lista de productos{% endblock %}
+
+{% block extra_css %} 
+    <link rel="stylesheet" href="{% static 'web/css/lista_productos.css'%}">
+{% endblock %}
+
+
+<main id="contenido">
+    {% block main %}
+        <section>
+            {% for tarea in lista_producto %}
+                <article>
+                    <section class="info">
+                        <section class="nombre_producto">
+                            <p><b>Nombre del producto:</b>
+                            </p>
+                            </br>
+                            <p> {{tarea.nombre_producto}}</p>
+                        </section>
+                        <br>
+                        <ection class="descripcion_producto">
+                            <p>
+                                <b>Descripcion del producto:</b>
+                            </p>
+                            </br>
+                            <p> 
+                                {{tarea.descripcion}}
+                            </p>
+                        </p>
+                    </section>
+
+                    <section class="botones">
+                        <a href="{% url 'producto_detalle' pk=tarea.id %}">Ver detalle</a>
+                        <a href="{% url 'modificar_producto' pk=tarea.id %}">Modificar</a>
+                        <a href="{% url 'borrar_producto' pk=tarea.id %}">Borrar</a>
+                    </section>
+                </article>
+            {% empty %}
+                <article>
+                    No hay productos cargados
+                </article>
+            {% endfor %}
+        </section>
+    {% endblock %}
+</main>

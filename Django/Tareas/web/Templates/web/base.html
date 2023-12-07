@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adm Productos {% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'web/css/base.css' %}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+        
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1>Administrador de productos</h1>
+        <h2>{% block section_title %}Lista de productos{% endblock %}</h2>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'lista_producto' %}">Lista de productos</a></li>
+                <li><a href="{% url 'crear_producto' %}">Crear producto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    <footer>
+        <p>Todos los derechos reservados - 2023</p>
+    </footer>
+</body>
+</html>

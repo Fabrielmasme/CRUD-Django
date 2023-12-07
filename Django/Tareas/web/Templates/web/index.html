@@ -1,0 +1,25 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Bienvenid@ {% endblock %}
+<!-- {% block home_css %}HOME {% endblock %} -->
+{% block section_title %}Inicio{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'web/css/index.css' %}">
+{% endblock %}
+
+{% block main %}
+    <Section class="descripcion">
+        <h3>Bienvenid@ al Administrador de Productos</h3>
+            <p>
+                La aplicación te permite gestionar tu inventario de productos de manera eficiente.
+                <br>
+                Podrás añadir nuevos productos, actualizar información existente, eliminar elementos innecesarios y revisar los detalles de cada artículo en tu lista.
+            </p>
+            <br>
+            <p>
+                ¡Simplifica tu gestión de productos con nuestras herramientas fáciles de usar y optimiza tu proceso de administración!
+            </p>
+    </Section>
+{% endblock %}

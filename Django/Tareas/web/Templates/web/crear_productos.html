@@ -1,0 +1,29 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Crear nuevo producto {% endblock %}
+{% block section_title %}Crear producto{% endblock %}
+
+{% block extra_css %} 
+    <link rel="stylesheet" href="{% static 'web/css/crear_productos.css'%}">
+{% endblock %}
+
+
+#"csrf_token"Es una validacion de seguridad, asi no hay manipulacion de los datos entre el servidor y el usuario.
+
+{% block main %}
+    <h3>Complete los campos para el nuevo producto: </h3>
+    <section class="caja-form">
+        <section class="formulario">
+
+            <form method="post" action="{% url 'crear_producto' %}">
+                {% csrf_token %} 
+                {{ form.as_p }}
+                <section class="boton">
+                    <input type="submit">
+                </section>
+            </form>
+        </section>
+    </section>
+    
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Modificar de producto {% endblock %}
+{% block section_title %}Modificar de producto{% endblock %}
+
+{% block extra_css %} 
+    <link rel="stylesheet" href="{% static 'web/css/modificar_producto.css'%}">
+{% endblock %}
+
+{% block main %}
+    <h3>Datos de los productos: </h3>
+
+    <section class="caja-form">
+        <section class="formulario">
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <section class="boton">
+                    <input type="submit">                
+                </section>
+            </form>
+
+        </section>
+    </section>
+    
+{% endblock %}

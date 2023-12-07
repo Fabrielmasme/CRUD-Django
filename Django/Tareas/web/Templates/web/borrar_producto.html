@@ -1,0 +1,28 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Borrar producto {% endblock %}
+{% block section_title %}Borrar producto{% endblock %}
+
+{% block extra_css %} 
+    <link rel="stylesheet" href="{% static 'web/css/borrar_producto.css'%}">
+{% endblock %}
+
+{% block main %}
+    <h3>Borrar Producto</h3>
+    <section class="caja-form">
+        <section class="formulario">
+            <form method="post">
+                    {% csrf_token %}
+                    <p>Estás seguro de querer borrar: <p>"<b>{{ object.nombre_producto}}</b>"</p></p>
+                    {{ form }}
+                <section class="boton">
+                    <input type="submit" value="Confirm">
+                </section>
+            </form>
+
+        </section>
+    </section>
+
+{% endblock %}
+

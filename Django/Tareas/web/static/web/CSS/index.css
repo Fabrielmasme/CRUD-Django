@@ -1,0 +1,35 @@
+h1{
+    font-size: 30px;
+    margin: 0 0 20px 0;
+}
+h2{
+    font-size: 30px;
+    margin: 10px 0 20px 0;
+}
+h3{
+    font-size: 40px;
+    text-align: center;
+    margin: 0 0 2rem 0;
+    width: 100%;
+    background-color: rgb(255, 225, 185);
+}
+.descripcion{
+    font-size: 1.9rem;
+    text-align: justify;
+    background-color: rgb(252, 241, 227);
+    padding: 2rem;
+    margin: 0 4.5rem 0 4.5rem;
+}
+main {
+    width: 100%;
+    height: 60vh;
+}
+
+footer{
+    background-color: #31304D;
+    color: white;
+    text-align: center;
+    margin: 47px 0 0 0;
+    padding: 10px;
+    width: 100%; 
+} 

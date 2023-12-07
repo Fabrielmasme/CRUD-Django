@@ -1,0 +1,31 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block title %} Detalle de producto {% endblock %}
+{% block section_title %}Detalle de producto{% endblock %}
+
+{% block extra_css %} 
+    <link rel="stylesheet" href="{% static 'web/css/producto_detalle.css'%}">
+    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    {% endblock %}
+
+{% block main %}
+    <h3>Detalle del producto:</h3>
+    <section class="caja-form">
+        <section class="formulario">
+            <p> 
+                <p><b>Nombre del producto:</b></p>
+                </br> 
+                <p>{{ object.nombre_producto }}</p>
+            </p>
+            <p>
+                <p><b>Descripcion del producto:</b></p>
+                </br>
+                <p>{{ object.descripcion }}</p>
+            </p>
+        </section>
+    </section>
+    
+{% endblock %}
+
